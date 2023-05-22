@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("sa3doun77/example-app")
+        app = docker.build("sa3dou77/example-app")
     }
 
     stage('Push image') {
