@@ -17,9 +17,7 @@ node {
     stage('Push image') {
         /* Finally, we'll push the image into Docker Hub */
 
-       # withDockerRegistry([ credentialsId: "docker-hub-crendentials", url: "" ]) {
-        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-crendentials') {
-           app.push("${env.BUILD_NUMBER}")
+        withDockerRegistry([ credentialsId: "docker-hub-crendentials", url: "" ]) {
             app.push("latest")
         }
     }
